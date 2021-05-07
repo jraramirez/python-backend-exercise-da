@@ -1,5 +1,9 @@
-from django.http import HttpResponse
+from rest_framework import viewsets
+
+from .serializers import ItemSerializer
+from .models import Item
 
 
-def index(request):
-    return HttpResponse("Hello, world. You're at the endpoints index.")
+class ItemViewSet(viewsets.ModelViewSet):
+    queryset = Item.objects.all().order_by('name')
+    serializer_class = ItemSerializer

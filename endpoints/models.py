@@ -17,3 +17,11 @@ class Item(models.Model):
 
     def __str__(self):
         return self.name
+
+class Vehicle(models.Model):
+    id = models.IntegerField(primary_key=True, unique=True)
+    name = models.CharField(max_length=50)
+    manufacturer = models.CharField(max_length=50)
+
+    def __str__(self):
+        return f'{id} {self.name}'

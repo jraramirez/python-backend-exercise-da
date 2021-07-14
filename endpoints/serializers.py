@@ -5,4 +5,4 @@ from .models import Item
 class ItemSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Item
-        fields = ('name', 'price', 'is_archived')
+        fields = ('name', 'price', 'is_archived', 'color')
